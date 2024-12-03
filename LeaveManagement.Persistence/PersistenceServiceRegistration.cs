@@ -14,6 +14,7 @@ public static class PersistenceServiceRegistration
         services.AddDbContext<HrDatabaseContext>(options =>
         {
             options.UseNpgsql(configuration.GetConnectionString("PgConnectionString"));
+            options.EnableSensitiveDataLogging();
         });
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

@@ -9,7 +9,7 @@ public class HrDatabaseContext : DbContext
 {
     public HrDatabaseContext(DbContextOptions<HrDatabaseContext> options) : base(options)
     {
-
+        
     }
 
     public DbSet<LeaveType> LeaveTypes { get; set; }
@@ -30,11 +30,11 @@ public class HrDatabaseContext : DbContext
         foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()
             .Where(q => q.State == EntityState.Added || q.State == EntityState.Modified))
         {
-            entry.Entity.DateModified = DateTime.Now;
+            entry.Entity.DateModified = DateTime.UtcNow;
 
             if (entry.State == EntityState.Added)
             {
-                entry.Entity.DateCreated = DateTime.Now;
+                entry.Entity.DateCreated = DateTime.UtcNow;
             }
         }
 
