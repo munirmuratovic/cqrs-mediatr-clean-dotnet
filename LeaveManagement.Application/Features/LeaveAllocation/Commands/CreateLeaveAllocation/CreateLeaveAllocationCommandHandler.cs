@@ -22,9 +22,9 @@ public class CreateLeaveAllocationCommandHandler : IRequestHandler<CreateLeaveAl
     {
         var validator = new CreateLeaveAllocationCommandValidator(_leaveTypeRepository);
 
-        var validationResult = validator.Validate(request);
+        var validationResult = validator.ValidateAsync(request);
 
-        if (validationResult.Errors.Any())
+        if ((await validationResult).Errors.Any())
         {
             throw new BadRequestException("Invalid Leave Allocation Request " + validationResult);
         }
