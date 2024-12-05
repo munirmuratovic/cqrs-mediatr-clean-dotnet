@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using LeaveManagement.Application.Features.LeaveType.Commands.CreateLeaveType;
 using LeaveManagement.Application.Features.LeaveType.Commands.UpdateLeaveType;
 using LeaveManagement.Application.Features.LeaveType.Queries.GetAllLeaveTypes;
