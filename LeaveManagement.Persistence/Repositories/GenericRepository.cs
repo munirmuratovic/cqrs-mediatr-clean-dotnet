@@ -28,7 +28,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
         await _context.SaveChangesAsync();
     }
 
-    public async Task<IReadOnlyList<T>> GetAsync()
+    public async Task<List<T>> GetAsync()
     {
         return await _context.Set<T>()
             .AsNoTracking()
