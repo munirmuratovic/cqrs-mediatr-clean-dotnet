@@ -12,8 +12,8 @@ using Persistence.DatabaseContext;
 namespace LeaveManagement.Persistence.Migrations
 {
     [DbContext(typeof(HrDatabaseContext))]
-    [Migration("20241202230917_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20241219164825_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
