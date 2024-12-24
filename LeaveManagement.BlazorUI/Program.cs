@@ -12,7 +12,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("https://localhost:7080"));
+builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = new Uri("http://localhost:5128"));
 
 builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>();
 builder.Services.AddScoped<ILeaveAllocationService, LeaveAllocationService>();
